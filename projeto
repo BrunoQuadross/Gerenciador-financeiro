@@ -57,8 +57,26 @@ void cadastra(struct Nelson *j){
     int d=0;
     int m=0;
     int a=0;
+    int p=0;
     scanf("%d",&d);
+    while(d>31  ){
+        
+    	p++;
+        printf("dia invalido ! insira novamente: ");
+        scanf("%d",&d);
+    }
+	if(p!=0){
+		printf("agora o mes: ");
+	}
+	
     scanf("%d",&m);
+    while(m>12){printf("mes invalido ! insira novamente: ");
+        scanf("%d",&m);
+    }
+	if(p!=0){
+		printf("agora o ano: ");
+	}
+	
     scanf("%d",&a);
     j->receitas[j->n].data=criaData(d,m,a);
     j->n++;	
@@ -88,16 +106,26 @@ void imprime12(struct Nelson j){
     int d=0;
     int m=0;
     int a=0;
-    printf("Apartir de que dia? :");
+    printf("apartir de que dia? ");
     scanf("%d",&d);
-    printf("\nEm qual mes? :");
+    while(d>31 ){
+        printf("dia invalido ! insira novamente: ");
+        scanf("%d",&d);
+    }
+
+	printf("apartir de que mes? ");
     scanf("%d",&m);
-    printf("\nEm qual ano? :");
+    while(m>12){printf("mes invalido ! insira novamente: ");
+        scanf("%d",&m);
+    }
+	
+	printf("apartir de que ano? ");
+	
     scanf("%d",&a);
     int i;
     int op=0;
 	for (i = 0; i < j.n; i++){
-        puts("_________");
+        puts("_________________________");
         if(conferi(j,d,m,a,i,op)==0){
             if(j.receitas[i].tipo==1){
                 printf(" Moradia: \n");
@@ -112,7 +140,7 @@ void imprime12(struct Nelson j){
             }
             printf(" Valor: %.2f \n",j.receitas[i].valor);
             printf(" Data: %d/%d/%d \n",j.receitas[i].data.dia,j.receitas[i].data.mes,j.receitas[i].data.ano);
-            puts("_________");
+            puts("_________________________");
         }        
     }    
 }
@@ -130,7 +158,7 @@ void imprime1(struct Nelson j){
     int i;
     int op=1;
 	for (i = 0; i < j.n; i++){
-        puts("_________");
+        puts("_________________________");
         if(conferi(j,d,m,a,i,op)==0){
             if(j.receitas[i].tipo==1){
                 printf("Moradia:\n");
@@ -145,7 +173,7 @@ void imprime1(struct Nelson j){
             }
             printf(" Valor: %.2f\n",j.receitas[i].valor);
             printf(" Data: %d/%d/%d\n",j.receitas[i].data.dia,j.receitas[i].data.mes,j.receitas[i].data.ano);
-            puts("_________");
+            puts("_________________________");
         }        
     }
 }
@@ -253,3 +281,4 @@ int main()
  
   return 0;
 }
+
