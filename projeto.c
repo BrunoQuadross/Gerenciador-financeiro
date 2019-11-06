@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#define MAX 50
+#define MAX 100
 
 struct Data{
     int dia;
@@ -184,11 +184,11 @@ void imprime1(struct Nelson j){
                 printf("Trabalho:\n");
 
             }
-            puts("_________________________");
+            
             printf(" Valor: %.2f\n",j.receitas[i].valor);
-            puts("_________________________");
+            
             printf(" Data: %d/%d/%d\n",j.receitas[i].data.dia,j.receitas[i].data.mes,j.receitas[i].data.ano);
-            puts("_________________________");
+            
         }        
     }
 }
